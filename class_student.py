@@ -10,7 +10,7 @@ class Student:
 
     function: average_grade(): Return the average over all grades (as a double)
     function: pass_fail(): Return if the student passed (average should be over 60)
-    function: print_stud_info(): Get the student name, surname, average grade and notes when printing the student info
+    function: get_student_info(): Get the student name, surname, average grade and notes when printing the student info
     function: get_student_notes(): Get the student notes
     function: add_grade(): Append a grade to the student's grades
     function: add_note(): Append a grade to the student's notes
@@ -24,7 +24,7 @@ class Student:
         self.last_name = last_name
         self.graduation_year = graduation_year
         self.grades_list = grades_list
-        self.address_list = []
+        self.address_dict = {'Number': None, 'Street': None, 'Town/City': None, 'Postcode': None}
         self.notes_list = []
 
     def average_grade(self):
@@ -40,7 +40,7 @@ class Student:
         else:
             return 'Fail'
 
-    def print_stud_info(self):
+    def get_student_info(self):
         # Get the student name, surname, average grade and notes when printing the student info.
         # If no notes, return N/A
         if len(self.notes_list) > 0:
@@ -50,31 +50,31 @@ class Student:
             notes = f"{self.first_name} {self.last_name}, Average Grade: {self.average_grade()}, Notes: N/A"
         return notes
 
-    def student_notes():
+    def get_student_notes(self):
         # Get the student notes
-        pass
+        if len(self.notes_list) > 0:
+            return "No Notes"
+        else:
+            return self.notes_list
 
-    def add_grade():
+    def add_grade(self, grade):
         # Append a grade to the student's grades
+        self.grades_list.append(grade)
+        return
 
-        pass
-
-    def add_note():
+    def add_note(self, note):
         # Append a grade to the student's notes
-        pass
+        self.notes_list.append(note)
+        return
 
-    def update_address():
+    def update_address(self, number, street, town_city, postcode):
         # Update the student's address
-        pass
+        self.address_dict['Number'] = number
+        self.address_dict['Street'] = street
+        self.address_dict['Town/City'] = town_city
+        self.address_dict['Postcode'] = postcode
 
+# Test Details
+# student1 = Student("John", "Sheridan", 2003, [34, 56, 89, 73, 67])
+# student2 = Student("Wolfgang", "Amadeus", 1770, [13, 47, 36, 77])
 
-student1 = Student("John", "Sheridan", 2003, [34, 56, 89, 73, 67])
-student2 = Student("Wolfgang", "Amadeus", 1770, [13, 47, 36, 77])
-
-# Use format to return name, average grade and pass/fail
-# print(f"{student1.first_name} {student1.last_name}, Average Grade: "
-#       f"{student1.average_grade()}, Result: {student1.pass_fail()}")
-# print(f"{student2.first_name} {student2.last_name}, Average Grade: "
-#       f"{student2.average_grade()}, Result: {student2.pass_fail()}")
-
-print(student1.print_stud_info())

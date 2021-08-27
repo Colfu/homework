@@ -1,2 +1,2 @@
 # homework
-Homework problemsfrom my Python tutoring sessions
+Homework problems from my Python tutoring sessions

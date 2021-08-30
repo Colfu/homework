@@ -15,7 +15,6 @@ class Student:
     function: add_grade(): Append a grade to the student's grades
     function: add_note(): Append a grade to the student's notes
     function: update_address(): Update the student's address
-
     """
 
     def __init__(self, first_name, last_name, graduation_year, grades_list):
@@ -28,7 +27,7 @@ class Student:
         self.notes_list = []
 
     def average_grade(self):
-        # Return the average over all grades (as a double), to 2 decimal places
+        # Return the average over all grades (as a double/float), to 2 decimal places
         average = float(sum(self.grades_list)) / len(self.grades_list)
         return "{:.2f}".format(average)
 
@@ -60,12 +59,10 @@ class Student:
     def add_grade(self, grade):
         # Append a grade to the student's grades
         self.grades_list.append(grade)
-        return
 
     def add_note(self, note):
         # Append a grade to the student's notes
         self.notes_list.append(note)
-        return
 
     def update_address(self, number, street, town_city, postcode):
         # Update the student's address
@@ -77,4 +74,3 @@ class Student:
 # Test Details
 # student1 = Student("John", "Sheridan", 2003, [34, 56, 89, 73, 67])
 # student2 = Student("Wolfgang", "Amadeus", 1770, [13, 47, 36, 77])
-

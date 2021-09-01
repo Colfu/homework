@@ -17,12 +17,12 @@ class Student:
     function: update_address(): Update the student's address
     """
 
-    def __init__(self, first_name, last_name, graduation_year, grades_list):
+    def __init__(self, first_name, last_name):
         # All the info connected to the student
         self.first_name = first_name
         self.last_name = last_name
-        self.graduation_year = graduation_year
-        self.grades_list = grades_list
+        self.graduation_year = None
+        self.grades_list = []
         self.address_dict = {'Number': None, 'Street': None, 'Town/City': None, 'Postcode': None}
         self.notes_list = []
 

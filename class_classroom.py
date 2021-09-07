@@ -1,5 +1,7 @@
-# Q: How to connect this to the Students made using Student Class
-#  need to change add_stdent() to use Student Class objects?
+
+from class_student import Student
+
+
 class Classroom:
     """
     Create a class Classroom that keeps records of students (as objects of the
@@ -37,39 +39,41 @@ class Classroom:
             return len(self.register_list)
 
     def get_students_average_grades(self):
-        for student_dict in self.register_list:
-            fn = student_dict.get('Firstname')
-            ln = student_dict.get('Lastname')
-            avg = student_dict.get('Average Grade')
+        for student in self.register_list:
+            fn = student.first_name
+            ln = student.last_name
+            avg = student.average_grade()
             print(f'{fn} {ln}, Av.Grade: {avg}')
         return ' '
 
     def get_classroom_average_grade(self):
         total = 0
-        for student_dict in self.register_list:
-            if student_dict.get('Average Grade') is None:
+        for student in self.register_list:
+            if student.average_grade() is None:
                 continue
             else:
-                total += student_dict.get('Average Grade')
+                total += student.average_grade()
         return total/len(self.register_list)
 
-    def add_student(self, firstname, lastname):
+    def add_student_to_classroom(self, new_student):
         # Adding a student to the register, unless class is already full
         if self.current_classroom_size == self.max_classroom_size:
             print('Sorry, this class is already full.')
         else:
-            student_dict = {'Firstname': firstname, 'Lastname': lastname, 'Average Grade': None}
-            self.register_list.append(student_dict)
+            self.register_list.append(new_student)
 
     def remove_student_from_classroom(self, firstname, lastname):
-        for student_dict in self.register_list:
-            if student_dict.get('Firstname') == firstname and student_dict.get('Lastname') == lastname:
-                self.register_list.remove(student_dict)
+        for student in self.register_list:
+            if student.first_name == firstname and student.last_name == lastname:
+                self.register_list.remove(student)
             else:
                 continue
 
     def get_classroom_id(self):
         return self.classroom_id
+
+    def get_class_register(self):
+        return self.register_list
 
 # Test Data:
 # room_01 = Classroom("room_01", 25)
@@ -79,4 +83,3 @@ class Classroom:
 # room_01.add_student('Bob', 'Sheridan')
 # room_01.add_student('Craig', 'James')
 # room_01.add_student('Dan', 'Archibald')
-

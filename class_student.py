@@ -28,6 +28,8 @@ class Student:
 
     def average_grade(self):
         # Return the average over all grades (as a double/float), to 2 decimal places
+        if len(self.grades_list) < 1:
+            return 'N/A'
         average = float(sum(self.grades_list)) / len(self.grades_list)
         return "{:.2f}".format(average)
 

@@ -13,19 +13,21 @@ class Classroom:
     param: register_list:  a list of dictionaries (firstname, lastname, average grade) to keep records of all students
     in that classroom
 
-    function: add_current_classroom_size() - replace with get_current_room_size()
-    function: get_students_average_grades(): the average grade of each student that belongs to the classroom
-    function: get_classroom_average_grade(): the total average grade of the class
-    function: add_student_to_classroom(): add student entry
+    function: add_current_classroom_size()   # get_current_room_size() better way of doing this
+    function: get_current_room_size() - returns amount of students currently in the classroom
+    function: get_students_average_grades(): return the average grade of each student that belongs to the classroom
+    function: get_classroom_average_grade(): return the total average grade of the class
+    function: add_student_to_classroom(): add student entry to class register
     function: remove_student_from_classroom(): remove student by providing the first name and the last name
-    function: get_classroom_id(): get the classroom id
+    function: get_classroom_id(): return the classroom id
+    function: get_class_register(): return the class register list
     """
 
     def __init__(self, classroom_id, max_classroom_size):
         # All the info connected to the classroom
         self.classroom_id = classroom_id
         self.max_classroom_size = max_classroom_size
-        self.current_classroom_size = 0
+        self.current_classroom_size = 0   # now unneeded, except is asked for
         self.register_list = []
 
     def add_current_room_size(self, current_size):

@@ -1,5 +1,5 @@
 
-from class_student import Student
+from student import Student
 
 
 class Classroom:
@@ -13,7 +13,6 @@ class Classroom:
     param: register_list:  a list of dictionaries (firstname, lastname, average grade) to keep records of all students
     in that classroom
 
-    function: add_current_classroom_size()   # get_current_room_size() better way of doing this
     function: get_current_room_size() - returns amount of students currently in the classroom
     function: get_students_average_grades(): return the average grade of each student that belongs to the classroom
     function: get_classroom_average_grade(): return the total average grade of the class
@@ -27,12 +26,8 @@ class Classroom:
         # All the info connected to the classroom
         self.classroom_id = classroom_id
         self.max_classroom_size = max_classroom_size
-        self.current_classroom_size = 0   # now unneeded, except is asked for
         self.register_list = []
 
-    def add_current_room_size(self, current_size):
-        # Not needed - see get_current_room_size function which is a better way of getting the information
-        self.current_classroom_size = current_size
 
     def get_current_classroom_size(self):
         if len(self.register_list) == 0:
@@ -59,12 +54,12 @@ class Classroom:
 
     def add_student_to_classroom(self, new_student):
         # Adding a student to the register, unless class is already full
-        if self.current_classroom_size == self.max_classroom_size:
+        if len(self.register_list) == self.max_classroom_size:
             print('Sorry, this class is already full.')
         else:
             self.register_list.append(new_student)
 
-    def remove_student_from_classroom(self, firstname, lastname):
+    def remove_student_from_classroom(self, firstname, lastname):   # remove student not 1st/last name
         for student in self.register_list:
             if student.first_name == firstname and student.last_name == lastname:
                 self.register_list.remove(student)

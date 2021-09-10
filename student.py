@@ -26,6 +26,12 @@ class Student:
         self.address_dict = {'Number': None, 'Street': None, 'Town/City': None, 'Postcode': None}
         self.notes_list = []
 
+    def __str__(self):
+        return f'{self.first_name} {self.last_name}, Grade: {self.average_grade()}'
+
+    def __repr__(self):
+        return f'{self.first_name}'
+
     def average_grade(self):
         # Return the average over all grades (as a double/float), to 2 decimal places
         if len(self.grades_list) < 1:
@@ -73,6 +79,3 @@ class Student:
         self.address_dict['Town/City'] = town_city
         self.address_dict['Postcode'] = postcode
 
-# Test Details
-# student1 = Student("John", "Sheridan", 2003, [34, 56, 89, 73, 67])
-# student2 = Student("Wolfgang", "Amadeus", 1770, [13, 47, 36, 77])

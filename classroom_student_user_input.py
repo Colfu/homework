@@ -8,8 +8,8 @@
 #     - Print all grade averages for a classroom    *Cr.5
 #     - Print the total average for a classroom     *Cr.6
 
-from class_classroom import Classroom
-from class_student import Student
+from classroom import Classroom
+from student import Student
 
 
 # def create_new_classroom():
@@ -35,6 +35,12 @@ from class_student import Student
         #         # print(new_classroom.get_class_register())      !!This isn't correct!!
 
 # print(create_new_classroom())
+
+
+
+# initialise classroom anchor
+classroom = None
+
 
 # set up loop for options menu          - however everything only exists within this loop ?!
 continue_yes_no = 1
@@ -75,8 +81,8 @@ while continue_yes_no == 1:
         grade = input('Grade to add: ')
         student = Student(student_fname, student_lname)
         #  **** how do I access a student who isn't stored anywhere?
-        for student in #where ever students not in a class are stored?!
-            if student.first_name == student_fname and student.first_name == student_lname:
+        for student in #school_list
+            if student.first_name == student_fname and student.last_name == student_lname:
                 student.add_grade(grade)
         print(f'New Grade: {grade}; added to {student_fname} {student_lname}')
     elif option == 4:

@@ -36,7 +36,7 @@ from class_student import Student
 
 # print(create_new_classroom())
 
-# set up loop for options menu
+# set up loop for options menu          - however everything only exists within this loop ?!
 continue_yes_no = 1
 while continue_yes_no == 1:
     #  Ask what function the user would like to do
@@ -60,46 +60,50 @@ while continue_yes_no == 1:
         room_id = input('Insert new classroom ID, eg. room_01, room_02: ')
         max_room_size = input('Insert new classroom maximum size, eg 20, 25: ')
         new_classroom = Classroom(room_id, max_room_size)
-        print('New Class Created')
+        print(f'New Classroom Created: {room_id}')
     elif option == 2:
         # Create new student                *** but where is this 'stored' to be accessed if not in a register?
-        new_stu_fname = input('Firstname: ')
-        new_stu_lname = input('Lastname: ')
-        # new_stu_id = input('ID: ')
-        new_student = Student(new_stu_fname, new_stu_lname)
-        print('New Student Created')
+        new_student_fname = input('Firstname: ')
+        new_student_lname = input('Lastname: ')
+        # new_student_id = input('ID: ')
+        new_student = Student(new_student_fname, new_student_lname)
+        print(f'New Student Created: {new_student_fname} {new_student_lname}')
     elif option == 3:
         # Add new grade to student
-        stu_fname = input('Firstname: ')
-        stu_lname = input('Lastname: ')
+        student_fname = input('Firstname: ')
+        student_lname = input('Lastname: ')
         grade = input('Grade to add: ')
-        if new_stu_fname == stu_fname and new_stu_lname == new_stu_lname:
-            student.add_grade(grade)                  #  **** how do I access a student who isn't stored anywhere?
-
+        student = Student(student_fname, student_lname)
+        #  **** how do I access a student who isn't stored anywhere?
+        for student in #where ever students not in a class are stored?!
+            if student.first_name == student_fname and student.first_name == student_lname:
+                student.add_grade(grade)
+        print(f'New Grade: {grade}; added to {student_fname} {student_lname}')
     elif option == 4:
         # Add student to classroom
-        add_student_to_classroom
-        pass
+        classroom = input('Classroom you want to add to: ')
+        student_fname = input('Student to add; First Name: ')
+        student_lname = input('Student to add; Last Name: ')
+        student = Student(student_fname, student_lname)
+        classroom.add_student_to_classroom(student)
+        print(f'{student_fname} {student_lname} added to classroom {classroom}')
     elif option == 5:
         # Remove student from classroom
-        pass
+        classroom = input('Classroom you want to add to: ')
+        student_fname = input('Student to add; First Name: ')
+        student_lname = input('Student to add; Last Name: ')
+        student = Student(student_fname, student_lname)
+        classroom.remove_student_from_classroom(student)
+        print(f'{student_fname} {student_lname} removed from classroom {classroom}')
     elif option == 6:
         # Print grade averages for classroom
-        pass
+        classroom = input('Which classroom would you like the average grades for?: ')
+        print(f'List of average grade for each student in {classroom}')
+        print(classroom.get_students_average_grades())
     elif option == 7:
         # Print total average for classroom
-        pass
-
-
-
-
-
-
-
-
-
-
-
+        class_average = classroom.get_classroom_average_grade()
+        print(f'Class {classroom} average grade: {class_average}')
 
 
 # Tests needed:

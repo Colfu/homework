@@ -8,8 +8,10 @@
 #     - Print all grade averages for a classroom    *Cr.5
 #     - Print the total average for a classroom     *Cr.6
 
+from school import School
 from classroom import Classroom
 from student import Student
+
 
 
 # def create_new_classroom():
@@ -32,7 +34,17 @@ from student import Student
         #         new_classroom.add_student_to_classroom(new_student)
         #         print('New Student Added')
         #
-        #         # print(new_classroom.get_class_register())      !!This isn't correct!!
+        #         # print(new_classroom.get_class_register())
+
+                # reg_list = new_classroom.get_class_register()
+                # for student in reg_list:
+                #     print(student)
+
+
+
+
+
+
 
 # print(create_new_classroom())
 
@@ -40,6 +52,11 @@ from student import Student
 
 # initialise classroom anchor
 classroom = None
+
+
+
+Cambditton_School = School('Cambditton_School')
+
 
 
 # set up loop for options menu          - however everything only exists within this loop ?!

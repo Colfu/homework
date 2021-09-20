@@ -1,5 +1,6 @@
-from class_classroom import Classroom
-from class_student import Student
+from school import School
+from classroom import Classroom
+from student import Student
 
 
 def create_new_classroom():

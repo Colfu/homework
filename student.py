@@ -88,10 +88,7 @@ class Student:
         return notes
 
 
-
-
-
-#Basic Testing
+# Basic Testing
 # bob_dylan = Student('Bob', 'Dylan')
 #
 # print('Test bob_dylan.first_name: ', bob_dylan.first_name)

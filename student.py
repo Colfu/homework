@@ -1,8 +1,8 @@
 class Student:
     """Create a class Student that keeps records of students, and functions to be used upon it.
 
-    param: first name (str)
-    param: last name (str)
+    param: first_name (str)
+    param: last_name (str)
     param: graduation year (int) (if student graduated, otherwise leave empty)
     param: grades_list (list of int) (each grade an int between 1 and 100)
     param: address_list (list of str) [number, street, town_city, country, postcode]
